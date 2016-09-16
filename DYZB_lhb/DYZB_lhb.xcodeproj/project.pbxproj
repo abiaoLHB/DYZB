@@ -8,11 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		EF2753DA1D8BF8820085829B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2753D91D8BF8820085829B /* AppDelegate.swift */; };
-		EF2753DF1D8BF8820085829B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF2753DD1D8BF8820085829B /* Main.storyboard */; };
-		EF2753E11D8BF8820085829B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF2753E01D8BF8820085829B /* Assets.xcassets */; };
-		EF2753E41D8BF8820085829B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF2753E21D8BF8820085829B /* LaunchScreen.storyboard */; };
 		EF2753EF1D8BF8830085829B /* DYZB_lhbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2753EE1D8BF8830085829B /* DYZB_lhbTests.swift */; };
 		EF2753FA1D8BF8830085829B /* DYZB_lhbUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2753F91D8BF8830085829B /* DYZB_lhbUITests.swift */; };
+		EF2754181D8C31040085829B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF2754111D8C31040085829B /* Assets.xcassets */; };
+		EF27541B1D8C31040085829B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF2754171D8C31040085829B /* Info.plist */; };
+		EF27541E1D8C31670085829B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF27541C1D8C31670085829B /* LaunchScreen.storyboard */; };
+		EF27541F1D8C31670085829B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF27541D1D8C31670085829B /* Main.storyboard */; };
+		EF2754221D8C37FA0085829B /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF2754201D8C37FA0085829B /* Home.storyboard */; };
+		EF2754241D8C381A0085829B /* Live.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF2754231D8C381A0085829B /* Live.storyboard */; };
+		EF2754291D8C385A0085829B /* Follow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF2754271D8C385A0085829B /* Follow.storyboard */; };
+		EF27542C1D8C387E0085829B /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF27542A1D8C387E0085829B /* Profile.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,16 +40,20 @@
 /* Begin PBXFileReference section */
 		EF2753D61D8BF8820085829B /* DYZB_lhb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DYZB_lhb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF2753D91D8BF8820085829B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EF2753DE1D8BF8820085829B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		EF2753E01D8BF8820085829B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		EF2753E31D8BF8820085829B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		EF2753E51D8BF8820085829B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF2753EA1D8BF8830085829B /* DYZB_lhbTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DYZB_lhbTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF2753EE1D8BF8830085829B /* DYZB_lhbTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DYZB_lhbTests.swift; sourceTree = "<group>"; };
 		EF2753F01D8BF8830085829B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF2753F51D8BF8830085829B /* DYZB_lhbUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DYZB_lhbUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF2753F91D8BF8830085829B /* DYZB_lhbUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DYZB_lhbUITests.swift; sourceTree = "<group>"; };
 		EF2753FB1D8BF8830085829B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF2754111D8C31040085829B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EF2754171D8C31040085829B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF27541C1D8C31670085829B /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EF27541D1D8C31670085829B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../Main.storyboard; sourceTree = "<group>"; };
+		EF2754211D8C37FA0085829B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DYZB_lhb/Base.lproj/Home.storyboard; sourceTree = SOURCE_ROOT; };
+		EF2754231D8C381A0085829B /* Live.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Live.storyboard; path = DYZB_lhb/Live.storyboard; sourceTree = SOURCE_ROOT; };
+		EF2754281D8C385A0085829B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DYZB_lhb/Base.lproj/Follow.storyboard; sourceTree = SOURCE_ROOT; };
+		EF27542B1D8C387E0085829B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DYZB_lhb/Base.lproj/Profile.storyboard; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,10 +106,9 @@
 			children = (
 				EF2754071D8C03E00085829B /* Classes */,
 				EF2753D91D8BF8820085829B /* AppDelegate.swift */,
-				EF2753DD1D8BF8820085829B /* Main.storyboard */,
-				EF2753E01D8BF8820085829B /* Assets.xcassets */,
-				EF2753E21D8BF8820085829B /* LaunchScreen.storyboard */,
-				EF2753E51D8BF8820085829B /* Info.plist */,
+				EF27541C1D8C31670085829B /* LaunchScreen.storyboard */,
+				EF2754111D8C31040085829B /* Assets.xcassets */,
+				EF2754171D8C31040085829B /* Info.plist */,
 			);
 			path = DYZB_lhb;
 			sourceTree = "<group>";
@@ -128,8 +136,8 @@
 			children = (
 				EF27540B1D8C03E00085829B /* MainDYZB */,
 				EF2754091D8C03E00085829B /* Home */,
-				EF2754081D8C03E00085829B /* Follow */,
 				EF27540A1D8C03E00085829B /* Live */,
+				EF2754081D8C03E00085829B /* Follow */,
 				EF27540C1D8C03E00085829B /* Profile */,
 				EF27540D1D8C03E00085829B /* Tools */,
 			);
@@ -160,6 +168,11 @@
 		EF27540B1D8C03E00085829B /* MainDYZB */ = {
 			isa = PBXGroup;
 			children = (
+				EF27541D1D8C31670085829B /* Main.storyboard */,
+				EF27542A1D8C387E0085829B /* Profile.storyboard */,
+				EF2754271D8C385A0085829B /* Follow.storyboard */,
+				EF2754231D8C381A0085829B /* Live.storyboard */,
+				EF2754201D8C37FA0085829B /* Home.storyboard */,
 			);
 			path = MainDYZB;
 			sourceTree = "<group>";
@@ -288,9 +301,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF2753E41D8BF8820085829B /* LaunchScreen.storyboard in Resources */,
-				EF2753E11D8BF8820085829B /* Assets.xcassets in Resources */,
-				EF2753DF1D8BF8820085829B /* Main.storyboard in Resources */,
+				EF2754181D8C31040085829B /* Assets.xcassets in Resources */,
+				EF2754221D8C37FA0085829B /* Home.storyboard in Resources */,
+				EF27542C1D8C387E0085829B /* Profile.storyboard in Resources */,
+				EF2754241D8C381A0085829B /* Live.storyboard in Resources */,
+				EF27541F1D8C31670085829B /* Main.storyboard in Resources */,
+				EF2754291D8C385A0085829B /* Follow.storyboard in Resources */,
+				EF27541E1D8C31670085829B /* LaunchScreen.storyboard in Resources */,
+				EF27541B1D8C31040085829B /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,20 +369,28 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		EF2753DD1D8BF8820085829B /* Main.storyboard */ = {
+		EF2754201D8C37FA0085829B /* Home.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				EF2753DE1D8BF8820085829B /* Base */,
+				EF2754211D8C37FA0085829B /* Base */,
 			);
-			name = Main.storyboard;
+			name = Home.storyboard;
 			sourceTree = "<group>";
 		};
-		EF2753E21D8BF8820085829B /* LaunchScreen.storyboard */ = {
+		EF2754271D8C385A0085829B /* Follow.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				EF2753E31D8BF8820085829B /* Base */,
+				EF2754281D8C385A0085829B /* Base */,
 			);
-			name = LaunchScreen.storyboard;
+			name = Follow.storyboard;
+			sourceTree = "<group>";
+		};
+		EF27542A1D8C387E0085829B /* Profile.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF27542B1D8C387E0085829B /* Base */,
+			);
+			name = Profile.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
