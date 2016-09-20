@@ -2,7 +2,7 @@
 /*
  一、首页
  A、推荐
-    1、最热：http://capi.douyucdn.cn/api/v1/getbigDataRoom?aid=ios&client_sys=ios&time=1474352280&auth=628377b50c4dd60a98077fd613c0eca5
+    3、最热游戏：http://capi.douyucdn.cn/api/v1/getbigDataRoom?aid=ios&client_sys=ios&time=1474352280&auth=628377b50c4dd60a98077fd613c0eca5
  
  B、游戏
  C、娱乐

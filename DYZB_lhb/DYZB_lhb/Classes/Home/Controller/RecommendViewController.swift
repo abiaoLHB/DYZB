@@ -4,12 +4,13 @@
 //
 //  Created by LHB on 16/9/19.
 //  Copyright © 2016年 LHB. All rights reserved.
-//  欢迎控制器
+//  推荐页面
 
 /*
     unowned:用通俗的话说，就是 unowned 设置以后即使它原来引用的内容已经被释放了，它仍然会保持对被已经释放了的对象的一个 "无效的" 引用，它不能是 Optional 值，也不会被指向 nil 。如果你尝试调用这个引用的方法或者访问成员属性的话，程序就会崩溃。而 weak 则友好一些，在引用的内容被释放后，标记为 weak 的成员将会自动地变成 nil (因此被标记为 @ weak 的变量一定需要是 Optional 值)。关于两者使用的选择，Apple 给我们的建议是如果能够确定在访问时不会已被释放的话，尽量使用 unowned ，如果存在被释放的可能，那就选择用 weak
  */
 import UIKit
+
 
 private let kItemMargin : CGFloat = 10
 private let kItemW = (kScreenW - 3 * kItemMargin)/2
@@ -46,13 +47,13 @@ class RecommendViewController: UIViewController {
         collectionView.delegate = self
         return collectionView
     }()
+    
+    lazy var recommendVM : RecommendViewModel = RecommendViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUI()
-      
-        
-        
+        loadData()
     }
 
     
@@ -66,39 +67,51 @@ extension RecommendViewController{
     }
 }
 
+//MARK: - 请求数据
+extension RecommendViewController{
+    func loadData() -> () {
+     recommendVM.lhb_requestVMData { 
+            self.collectionView.reloadData()
+        }
+    }
+}
+
 //MARK: - 数据源代理方法
 extension RecommendViewController : UICollectionViewDataSource{
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 12
+        return recommendVM.anchorGroups.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section == 0 {
-            return 8
-        }else{
-            return 4
-        }
+        let group = recommendVM.anchorGroups[section]
+        return group.anchors.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell : UICollectionViewCell!
-        
+      
+        let group = recommendVM.anchorGroups[indexPath.section]
+        let anchor = group.anchors[indexPath.item]
+    
         if indexPath.section == 1 {
-             cell = collectionView.dequeueReusableCell(withReuseIdentifier: kProttyCellID, for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kProttyCellID, for: indexPath) as! CollectionPrettyCell
+            cell.anchor = anchor
+            return cell
         }else{
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNormalCellID, for: indexPath)
+          let  cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNormalCellID, for: indexPath) as! CollectionNormalCell
+            cell.anchor = anchor
+            return cell
         }
-        
-        return cell
     }
     
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHeaderViewID, for: indexPath)
+       
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHeaderViewID, for: indexPath) as! CollectionHeaderView
+        let group = recommendVM.anchorGroups[indexPath.section]
+        headerView.group = group
         
         return headerView
-        
+
     }
 }
 
@@ -113,8 +126,6 @@ extension RecommendViewController : UICollectionViewDelegateFlowLayout{
         return CGSize(width: kItemW, height: kNormalItemH)
     }
 }
-
-
 
 
 

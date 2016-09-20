@@ -60,6 +60,12 @@
                 <constraint firstItem="jhu-4f-NEh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="j4X-Fg-qFO"/>
             </constraints>
             <size key="customSize" width="149" height="147"/>
+            <connections>
+                <outlet property="iconImageView" destination="jhu-4f-NEh" id="RLk-aB-HZf"/>
+                <outlet property="nickNameLabel" destination="9fz-fw-SYs" id="ZRz-BK-NRc"/>
+                <outlet property="onlineBtn" destination="dBo-lG-yx0" id="2wH-Lb-b6p"/>
+                <outlet property="roomNameLabe" destination="e1P-BG-dqy" id="xyY-kC-5iY"/>
+            </connections>
             <point key="canvasLocation" x="74.5" y="100.5"/>
         </collectionViewCell>
     </objects>

@@ -4,7 +4,7 @@
 //
 //  Created by LHB on 16/9/17.
 //  Copyright © 2016年 LHB. All rights reserved.
-//
+//  首页控制器
 
 import UIKit
 
@@ -65,16 +65,17 @@ extension HomeViewController{
         navigationItem.rightBarButtonItems = [historyItem,searchItem,qrCodeItem]
     }
 }
+
 //MARK: - pageTitleView协议方法
 extension HomeViewController : PageTitleViewDelegate{
-    func pageTitleViewClick(titleView: PageTitleView, selectIndex index: Int) {
-        pageContentView.setCurrentIndex(currentIndex: index)
+    func pageTitleViewClick(_ titleView: PageTitleView, selectIndex index: Int) {
+        pageContentView.setCurrentIndex(index)
     }
  
 }
 //MARK: - pageContentView协议方法
 extension HomeViewController : PageContentViewDelegate{
-    func pageContentView(contentView: PageContentView, progress: CGFloat, sourceIndex: Int, targetIndex: Int) {
-         pageTitleView.setTitleWithProgerss(progerss: progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
+    func pageContentView(_ contentView: PageContentView, progress: CGFloat, sourceIndex: Int, targetIndex: Int) {
+         pageTitleView.setTitleWithProgerss(progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
     }
 }

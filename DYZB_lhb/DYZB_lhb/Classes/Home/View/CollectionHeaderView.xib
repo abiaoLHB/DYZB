@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="kHeaderViewID" id="U6b-Vx-4bR">
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="kHeaderViewID" id="U6b-Vx-4bR" customClass="CollectionHeaderView" customModule="DYZB_lhb" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
@@ -49,6 +49,10 @@
                 <constraint firstItem="LKw-6x-JH1" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="vQ3-P8-QVu"/>
                 <constraint firstItem="LKw-6x-JH1" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="vWD-wo-Pfh"/>
             </constraints>
+            <connections>
+                <outlet property="iconImageView" destination="8oS-G8-64r" id="eZ6-O4-sZW"/>
+                <outlet property="prettyLabel" destination="v3S-xA-x8k" id="kcQ-F3-Blz"/>
+            </connections>
             <point key="canvasLocation" x="-76" y="-34"/>
         </collectionReusableView>
     </objects>

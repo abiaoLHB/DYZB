@@ -11,7 +11,7 @@ import UIKit
 //: class表示该协议只能被类遵守
 //selectIndex index 第一个是外部参数，第二个是内部参数
 protocol PageTitleViewDelegate : class {
-    func pageTitleViewClick(titleView : PageTitleView,selectIndex index : Int)
+    func pageTitleViewClick(_ titleView : PageTitleView,selectIndex index : Int)
 }
 
 private let kScrollLineH : CGFloat = 2
@@ -87,6 +87,8 @@ extension PageTitleView{
             //给label添加收拾
             label.isUserInteractionEnabled = true
             let tapGes = UITapGestureRecognizer(target: self, action: #selector(self.titleLabelClick(tapGes:)))
+
+            
             label.addGestureRecognizer(tapGes)
             
         }
@@ -111,8 +113,15 @@ extension PageTitleView{
 //MARK: - 监听label的点击
 extension PageTitleView{
   @objc func titleLabelClick(tapGes : UITapGestureRecognizer) -> () {
+
     //获取当前label
     guard let currentLabel = tapGes.view as? UILabel else{return}
+    
+    //重复点击label的话，直接返回
+    if currentLabel.tag == currentIndex {
+        return
+    }
+    
         //获取之前的label
     let oldLabel = titlesLabels[currentIndex]
     //切换文字颜色
@@ -128,14 +137,14 @@ extension PageTitleView{
         self.scrollLine.frame.origin.x = scrollLineX
     }
     //通知代理做事情
-    delegate?.pageTitleViewClick(titleView: self, selectIndex: currentIndex)
+    delegate?.pageTitleViewClick(self, selectIndex: currentIndex)
 
     }
 }
 
 //MARK: - 对外暴漏方法
 extension PageTitleView{
-    func setTitleWithProgerss(progerss : CGFloat,sourceIndex : Int,targetIndex : Int){
+    func setTitleWithProgerss(_ progerss : CGFloat,sourceIndex : Int,targetIndex : Int){
         //取出sourceLabel和targetabel
         let sourceLabel = titlesLabels[sourceIndex]
         let targetLabel = titlesLabels[targetIndex]

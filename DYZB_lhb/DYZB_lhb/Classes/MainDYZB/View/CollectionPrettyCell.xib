@@ -14,7 +14,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="156" height="162"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n3Z-sd-RUE">
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n3Z-sd-RUE">
                         <constraints>
                             <constraint firstAttribute="height" constant="14" id="Uam-6C-jye"/>
                         </constraints>
@@ -39,30 +39,31 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6666在线" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WHN-EV-nhD">
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IpA-H8-AYZ">
                         <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="60" id="Iff-W6-Mk8"/>
-                            <constraint firstAttribute="height" constant="21" id="YdU-n7-XoO"/>
+                            <constraint firstAttribute="height" constant="20" id="Cv9-cU-Ei2"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
+                        <inset key="contentEdgeInsets" minX="3" minY="0.0" maxX="3" maxY="0.0"/>
+                        <state key="normal" title="6666在线">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                 <integer key="value" value="3"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                         </userDefinedRuntimeAttributes>
-                    </label>
+                    </button>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstItem="Qi2-2n-VMB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="4Aq-uL-f0d"/>
                 <constraint firstItem="n3Z-sd-RUE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="59a-Ey-Q3q"/>
-                <constraint firstAttribute="trailing" secondItem="WHN-EV-nhD" secondAttribute="trailing" constant="5" id="6Me-vi-crm"/>
                 <constraint firstItem="n3Z-sd-RUE" firstAttribute="top" secondItem="Iiq-Hc-bta" secondAttribute="bottom" constant="5" id="CQx-av-ul0"/>
-                <constraint firstItem="WHN-EV-nhD" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="hhc-cA-FcD"/>
+                <constraint firstAttribute="trailing" secondItem="IpA-H8-AYZ" secondAttribute="trailing" constant="8" id="JuO-il-Abu"/>
+                <constraint firstItem="IpA-H8-AYZ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="VwI-4R-i6m"/>
                 <constraint firstAttribute="trailing" secondItem="Qi2-2n-VMB" secondAttribute="trailing" id="ihB-xw-xaZ"/>
                 <constraint firstItem="Iiq-Hc-bta" firstAttribute="top" secondItem="Qi2-2n-VMB" secondAttribute="bottom" constant="5" id="kyi-gC-Sdz"/>
                 <constraint firstItem="Qi2-2n-VMB" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="oPL-gJ-xcO"/>
@@ -70,6 +71,12 @@
                 <constraint firstItem="Iiq-Hc-bta" firstAttribute="leading" secondItem="n3Z-sd-RUE" secondAttribute="leading" id="v40-5l-9Fv"/>
             </constraints>
             <size key="customSize" width="156" height="162"/>
+            <connections>
+                <outlet property="cityBtn" destination="n3Z-sd-RUE" id="Zqw-Gn-dHm"/>
+                <outlet property="iconImageView" destination="Qi2-2n-VMB" id="Jo6-Vs-qLu"/>
+                <outlet property="nickNameLabel" destination="Iiq-Hc-bta" id="S46-U6-8G5"/>
+                <outlet property="onlineBtn" destination="IpA-H8-AYZ" id="1Oc-he-3x0"/>
+            </connections>
             <point key="canvasLocation" x="32" y="59"/>
         </collectionViewCell>
     </objects>

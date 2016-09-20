@@ -5,6 +5,6 @@
 target 'DYZB_lhb' do
 
 pod 'Alamofire','~> 4.0'
-
+pod 'Kingfisher','~>3.0.1'
 end
 

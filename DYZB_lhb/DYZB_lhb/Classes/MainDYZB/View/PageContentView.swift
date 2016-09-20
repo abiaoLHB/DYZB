@@ -9,7 +9,7 @@
 import UIKit
 
 protocol PageContentViewDelegate : class  {
-    func pageContentView(contentView : PageContentView,progress : CGFloat,sourceIndex : Int,targetIndex : Int)
+    func pageContentView(_ contentView : PageContentView,progress : CGFloat,sourceIndex : Int,targetIndex : Int)
 }
 
 let ContentViewCellID : String = "ContentViewCellID"
@@ -140,13 +140,13 @@ extension PageContentView : UICollectionViewDelegate{
         }
         
         //将progress／source／target 传出去
-        delegate?.pageContentView(contentView: self, progress: progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
+        delegate?.pageContentView(self, progress: progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
         
     }
 }
 //MARK: - 对外暴漏方法
 extension PageContentView{
-    func setCurrentIndex(currentIndex : Int)  {
+    func setCurrentIndex(_ currentIndex : Int)  {
         
         //记录需要进行执行的代理方法
         isForbidScrollDelegate = true
