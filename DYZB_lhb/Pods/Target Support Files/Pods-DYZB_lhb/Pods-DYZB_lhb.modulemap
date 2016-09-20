@@ -1,0 +1,6 @@
+framework module Pods_DYZB_lhb {
+  umbrella header "Pods-DYZB_lhb-umbrella.h"
+
+  export *
+  module * { export * }
+}
