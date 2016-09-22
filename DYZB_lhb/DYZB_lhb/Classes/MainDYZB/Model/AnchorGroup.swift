@@ -23,6 +23,9 @@ class AnchorGroup: NSObject {
     var tag_name : String = ""
     
     var icon_name : String = "home_header_normal"
+    // 定义横滚游戏图标
+    var icon_url : String = ""
+    
     //定义主播数组
     lazy var anchors :[AnchorModel] = [AnchorModel]()
     

@@ -36,7 +36,6 @@ class PageTitleView: UIView {
         scrollView.scrollsToTop = false //要做状态栏点击会顶部，最好关掉这个
         scrollView.bounces = false
         return scrollView
-        
     }()
     
     lazy var scrollLine : UIView = {

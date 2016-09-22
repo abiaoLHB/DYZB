@@ -17,6 +17,8 @@ private let kItemW = (kScreenW - 3 * kItemMargin)/2
 private let kNormalItemH = kItemW * 3 / 4
 private let kProttyItemH = kItemW * 4 / 3
 private let kHeaderViewH : CGFloat = 50
+private let kCyleViewH : CGFloat = kScreenW * 3 / 8
+private let kGameViewH : CGFloat = 90
 
 private let kNormalCellID = "kNormalCellID"
 private let kProttyCellID = "kProttyCellID"
@@ -37,6 +39,9 @@ class RecommendViewController: UIViewController {
         collectionView.backgroundColor = UIColor.white
         //collectionView的重要属性，随着父控件伸缩
         collectionView.autoresizingMask = [.flexibleHeight,.flexibleWidth]
+        collectionView.contentInset = UIEdgeInsetsMake(kCyleViewH+kGameViewH, 0, 0, 0)
+        
+
         //注册cell
         collectionView.register(UINib(nibName: "CollectionNormalCell", bundle: nil), forCellWithReuseIdentifier: kNormalCellID)
         collectionView.register(UINib(nibName: "CollectionPrettyCell", bundle: nil), forCellWithReuseIdentifier: kProttyCellID)
@@ -47,14 +52,24 @@ class RecommendViewController: UIViewController {
         collectionView.delegate = self
         return collectionView
     }()
-    
+    lazy var cyleView : RecommendCyleView = {
+        let cyleView = RecommendCyleView.lhb_recommendCyleView()
+        cyleView.frame = CGRect(x: 0, y: -(kCyleViewH + kGameViewH), width: kScreenW, height: kCyleViewH)
+        return cyleView
+    }()
     lazy var recommendVM : RecommendViewModel = RecommendViewModel()
-
+    lazy var recommendGameView : RecommendGameView = {
+        let gameView = RecommendGameView.recommendGameView()
+        gameView.frame = CGRect(x: 0, y: -kGameViewH, width: kScreenW, height: kGameViewH)
+        return gameView
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUI()
         loadData()
+        
     }
+    
 
     
 }
@@ -63,15 +78,28 @@ class RecommendViewController: UIViewController {
 extension RecommendViewController{
     
     func setUpUI() -> () {
+        //将collectionView添加到控制器的view中
         view.addSubview(collectionView)
+        //将cyleview添加到collectionView中
+        collectionView.addSubview(cyleView)
+        collectionView.addSubview(recommendGameView)
     }
 }
 
 //MARK: - 请求数据
 extension RecommendViewController{
     func loadData() -> () {
-     recommendVM.lhb_requestVMData { 
+        //请求推荐数据
+     recommendVM.lhb_requestVMData {
+        // 展示推荐数据
             self.collectionView.reloadData()
+        //将推荐数据传给滚动的游戏数据，因为一部分内容一样 
+            self.recommendGameView.groups = self.recommendVM.anchorGroups
+        }
+        //请求轮播数据
+        recommendVM.lhb_circleVMData {
+            //轮播数据请求完毕，传给轮播的view
+            self.cyleView.circleModels = self.recommendVM.circleModels
         }
     }
 }

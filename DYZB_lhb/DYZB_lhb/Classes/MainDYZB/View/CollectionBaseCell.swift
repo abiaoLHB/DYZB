@@ -28,9 +28,10 @@ class CollectionBaseCell: UICollectionViewCell {
             }
             onlineBtn.setTitle(online, for: .normal)
             nickNameLabel.text = anchor.nickname
-            
             guard  let iconUrl = URL(string: anchor.vertical_src) else{ return }
-            iconImageView.kf_setImage(with:iconUrl)
+            
+            iconImageView.kf_setImage(with: iconUrl, placeholder: UIImage(named: "Img_default"), options: nil, progressBlock: nil, completionHandler: nil)
+            
         }
     }
 }

@@ -14,15 +14,17 @@ class RecommendViewModel {
     lazy var anchorGroups : [AnchorGroup] = [AnchorGroup]()
     lazy var bigDataGrop : AnchorGroup = AnchorGroup()
     lazy var prettyGroup : AnchorGroup = AnchorGroup()
-    
+    lazy var circleModels : [CircleModel] = [CircleModel]()
 }
 
 //MARK: - 发送网络请求
 extension RecommendViewModel{
+    //请求推荐数据
     func lhb_requestVMData(requestOkAllDataCallBack : @escaping ()->()) -> () {
         print("时间：\(NSDate.lhb_getCurrentTotalSecondsSinece1970())")
 
-        let parameters = ["limit":"4","offset":"0","time":NSDate.lhb_getCurrentTotalSecondsSinece1970()]
+        let parameters = ["limit":"0","offset":"0","time":NSDate.lhb_getCurrentTotalSecondsSinece1970()]
+        
         //创建group
         let dGroup = DispatchGroup()
          //1、热门数据
@@ -39,24 +41,21 @@ extension RecommendViewModel{
             self.bigDataGrop.icon_name = "home_header_hot"
             for dict in dataArr{
                 let anchor = AnchorModel(dict: dict)
+                
                 self.bigDataGrop.anchors.append(anchor)
             }
-            
             dGroup.leave()
         }
         
         //2、颜值数据
         dGroup.enter()
-        NetworkTools.lhb_requsetData(methodType: .POST, urlString: homeRecommendPrettyUrlStr, parameters: parameters) { (result) in
+        NetworkTools.lhb_requsetData(methodType: .GET, urlString: homeRecommendPrettyUrlStr, parameters: nil) { (result) in
             //1、将rsult转成字典模型
             guard let resultDic = result as? [String : NSObject] else{ return }
             //2、根据data这个key,获取字典数组
             guard let dataArr = resultDic["data"] as? [[String : NSObject]] else { return }
-            
-            print("颜值\(dataArr.count)")
             //3、创建组
-            self.prettyGroup.anchors.removeAll()
-            self.prettyGroup.tag_name = "闫妮妹"
+            self.prettyGroup.tag_name = "颜值"
             self.prettyGroup.icon_name = "home_header_phone"
             
             for dict in dataArr{
@@ -83,11 +82,22 @@ extension RecommendViewModel{
         
         //所有数据都请求到，排序
        //DispatchQueue.main 获取住队列
-        
         dGroup.notify(queue: DispatchQueue.main) {
             self.anchorGroups.insert(self.prettyGroup, at: 0)
             self.anchorGroups.insert(self.bigDataGrop, at: 0)
             requestOkAllDataCallBack()
+        }
+    }
+    //请求轮播数据
+    func lhb_circleVMData(requestOkCircleDataCallBack : @escaping ()->()) -> (){
+        NetworkTools.lhb_requsetData(methodType: .POST, urlString: homeCircleUrlStr, parameters: ["version" : "2.300"]) { (result) in
+            
+            guard  let resultDic = result as? [String : NSObject] else{ return }
+           guard let dataArr = resultDic["data"] as? [[String : NSObject]] else{ return }
+            for dict in dataArr{
+                self.circleModels.append(CircleModel(dict: dict))
+            }
+            requestOkCircleDataCallBack()
         }
     }
 }

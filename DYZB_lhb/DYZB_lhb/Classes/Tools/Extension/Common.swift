@@ -26,14 +26,16 @@ let kScreenH = UIScreen.main.bounds.height
 /*-------------------------------推荐------------------------------------*/
 /**颜值*/
 //http://capi.douyucdn.cn/api/v1/getVerticalRoom?limit=4&offset=0&time=1474384084.02199
-let homeRecommendPrettyUrlStr = "http://capi.douyucdn.cn/api/v1/getVerticalRoom"
+let homeRecommendPrettyUrlStr = "http://capi.douyucdn.cn/api/v1/getVerticalRoom?limit=4&client_sys=ios&offset=0"
 /**最热*/
 //http://capi.douyucdn.cn/api/v1/getbigDataRoom?time=1474385140.75307
 let homeRecommendHotUrlStr = "http://capi.douyucdn.cn/api/v1/getbigDataRoom"
 /**游戏*/
 //http://capi.douyucdn.cn/api/v1/getHotCate?limit=4&offset=0&time=1474379683.42272
 let homeRecommendHotGameUrlStr = "http://capi.douyucdn.cn/api/v1/getHotCate"
-
+/**顶部轮播数据*/
+//http://www.douyutv.com/api/v1/slide/6?version=2.300
+let homeCircleUrlStr = "http://www.douyutv.com/api/v1/slide/6"
 
 /*-------------------------------游戏------------------------------------*/
 
