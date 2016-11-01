@@ -18,13 +18,15 @@ class CollectionRecommendGameCell: UICollectionViewCell {
     var group : AnchorGroup?{
         didSet{
             tagNameLabel.text = group?.tag_name
-            let iconUrl = URL(string: group!.icon_url)
+             let iconUrl = URL(string: group!.icon_url)
             iconImageView.kf_setImage(with: iconUrl, placeholder: UIImage(named: "btn_v_more"), options: nil, progressBlock: nil, completionHandler: nil)
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        
         
     }
 
